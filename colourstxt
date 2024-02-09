@@ -1,0 +1,8 @@
+Secondary:BLUE
+100:#3F5DBD
+50:#3F5DBD80
+25:#3F5DBD40
+10:#3F5DBD1a
+5:#3F5DBDd
+
+backgroundColor: 'white', // Set background color to match the shadow color
