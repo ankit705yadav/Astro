@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
   headText: {
     fontSize: 15,
     color: 'grey',
-    fontFamily: 'Poppins-Regular',
   },
   openIcon: {
     width: wp('6'),
@@ -71,7 +70,8 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 30,
     color: 'black',
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
+    fontFamily: 'SpaceGrotesk-Bold',
     textAlign: 'center',
     paddingLeft: wp('9.5'),
     paddingRight: wp('9.5'),

@@ -12,8 +12,16 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import CardBirth from '../Components/CardBirth';
+import {useState} from 'react';
 
 export default function BirthChart() {
+  const [name, setName] = useState('chitresh');
+  const [birthDateAndPlace, setBirthDateAndPlace] = useState(
+    '24 Nov1988, 11:17 AM,Ajmer',
+  );
+  const [risingSign, setRisingSign] = useState('Capricorn');
+  const [nakshatra, setNakshatra] = useState('Rohinin');
+
   return (
     <View>
       <ScrollView style={styles.wrapper}>
@@ -36,8 +44,8 @@ export default function BirthChart() {
               fontWeight: 'bold',
               padding: wp('5.5'),
             }}>
-            Chitresh
-            <Text style={{fontWeight: 400}}> -24 Nov1988, 11:17 AM,Ajmer</Text>
+            {name}
+            <Text style={{fontWeight: 400}}> -{birthDateAndPlace}</Text>
           </Text>
 
           <View style={styles.sCardContainer}>
@@ -47,7 +55,7 @@ export default function BirthChart() {
                 source={require('../assets/signs/Capricorn.png')}
               />
               <Text style={styles.sText1}>Your Rising Sign is</Text>
-              <Text style={styles.sText2}>Capricorn</Text>
+              <Text style={styles.sText2}>{risingSign}</Text>
             </View>
             <Image
               style={styles.sCarddivider}
@@ -59,7 +67,7 @@ export default function BirthChart() {
                 source={require('../assets/signs/Libra.png')}
               />
               <Text style={styles.sText1}>Your Nakshatra is</Text>
-              <Text style={styles.sText2}>Rohinin</Text>
+              <Text style={styles.sText2}>{nakshatra}</Text>
             </View>
           </View>
 
@@ -233,7 +241,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: 'black',
     fontWeight: 'bold',
-    fontFamily: 'Poppins-Regular',
   },
   openIcon: {
     width: wp('6'),
@@ -294,7 +301,6 @@ const styles = StyleSheet.create({
     paddingBottom: wp('2.5'),
   },
   note: {
-    color: '#3F5DBD',
     paddingTop: wp('4'),
   },
 });

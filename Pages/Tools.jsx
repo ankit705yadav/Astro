@@ -1,9 +1,16 @@
-import {Text, View, StyleSheet, Image, ScrollView} from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  ScrollView,
+  Pressable,
+} from 'react-native';
 import Header from '../Components/Header';
 import NavBottom from '../Components/NavBottom';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 
-const Tools = () => {
+const Tools = props => {
   return (
     <View style={styles.layout}>
       <ScrollView>
@@ -21,69 +28,83 @@ const Tools = () => {
         </View>
 
         <View style={styles.cardWrapper}>
-          <View style={[styles.card, styles.boxShadow]}>
-            <View style={styles.icon}>
-              <Image
-                style={styles.cardImg}
-                source={require('../assets/crd1.png')}
-              />
+          <Pressable onPress={() => props.navigation.navigate('BirthChart')}>
+            <View style={[styles.card, styles.boxShadow, {zIndex: 0.5}]}>
+              <View style={styles.icon}>
+                <Image
+                  style={styles.cardImg}
+                  source={require('../assets/crd1.png')}
+                />
+              </View>
+              <Text style={styles.cardText}>Your Birth Chart</Text>
             </View>
-            <Text style={styles.cardText}>Your Birth Chart</Text>
-          </View>
-          <View style={[styles.card, styles.androidShadow]}>
-            <View style={styles.icon}>
-              <Image
-                style={styles.cardImg}
-                source={require('../assets/crd2.png')}
-              />
+          </Pressable>
+          <Pressable onPress={() => props.navigation.navigate('Hora')}>
+            <View style={[styles.card, styles.androidShadow]}>
+              <View style={styles.icon}>
+                <Image
+                  style={styles.cardImg}
+                  source={require('../assets/crd2.png')}
+                />
+              </View>
+              <Text style={styles.cardText}>Hora</Text>
             </View>
-            <Text style={styles.cardText}>Hora</Text>
-          </View>
-          <View style={[styles.card, styles.boxShadow, styles.androidShadow]}>
-            <View style={styles.icon}>
-              <Image
-                style={styles.cardImg}
-                source={require('../assets/crd3.png')}
-              />
+          </Pressable>
+          <Pressable onPress={() => props.navigation.navigate('Panchang')}>
+            <View style={[styles.card, styles.boxShadow, styles.androidShadow]}>
+              <View style={styles.icon}>
+                <Image
+                  style={styles.cardImg}
+                  source={require('../assets/crd3.png')}
+                />
+              </View>
+              <Text style={styles.cardText}>Panchang</Text>
             </View>
-            <Text style={styles.cardText}>Panchang</Text>
-          </View>
-          <View style={styles.card}>
-            <View style={styles.icon}>
-              <Image
-                style={styles.cardImg}
-                source={require('../assets/crd4.png')}
-              />
+          </Pressable>
+          <Pressable onPress={() => props.navigation.navigate('Moments')}>
+            <View style={styles.card}>
+              <View style={styles.icon}>
+                <Image
+                  style={styles.cardImg}
+                  source={require('../assets/crd4.png')}
+                />
+              </View>
+              <Text style={styles.cardText}>Assistant</Text>
             </View>
-            <Text style={styles.cardText}>Assistant</Text>
-          </View>
-          <View style={styles.card}>
-            <View style={styles.icon}>
-              <Image
-                style={styles.cardImg}
-                source={require('../assets/crd5.png')}
-              />
+          </Pressable>
+          <Pressable onPress={() => props.navigation.navigate('Personalized')}>
+            <View style={styles.card}>
+              <View style={styles.icon}>
+                <Image
+                  style={styles.cardImg}
+                  source={require('../assets/crd5.png')}
+                />
+              </View>
+              <Text style={styles.cardText}>Moon 2.5</Text>
             </View>
-            <Text style={styles.cardText}>Moon 2.5</Text>
-          </View>
-          <View style={styles.card}>
-            <View style={styles.icon}>
-              <Image
-                style={styles.cardImg}
-                source={require('../assets/crd6.png')}
-              />
+          </Pressable>
+          <Pressable onPress={() => props.navigation.navigate('Today')}>
+            <View style={styles.card}>
+              <View style={styles.icon}>
+                <Image
+                  style={styles.cardImg}
+                  source={require('../assets/crd6.png')}
+                />
+              </View>
+              <Text style={styles.cardText}>Together</Text>
             </View>
-            <Text style={styles.cardText}>Together</Text>
-          </View>
-          <View style={styles.card}>
-            <View style={styles.icon}>
-              <Image
-                style={styles.cardImg}
-                source={require('../assets/crd7.png')}
-              />
+          </Pressable>
+          <Pressable onPress={() => props.navigation.navigate('Transit')}>
+            <View style={styles.card}>
+              <View style={styles.icon}>
+                <Image
+                  style={styles.cardImg}
+                  source={require('../assets/crd7.png')}
+                />
+              </View>
+              <Text style={styles.cardText}>Edit</Text>
             </View>
-            <Text style={styles.cardText}>Edit</Text>
-          </View>
+          </Pressable>
         </View>
       </ScrollView>
       <NavBottom />
@@ -97,9 +118,6 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     backgroundColor: 'white',
     padding: wp('3'),
-    // paddingLeft: wp('3'),
-    // paddingRight: wp('3'),
-    // marginTop: wp('3'),
   },
   titlebar: {
     marginTop: wp('5'),
@@ -112,18 +130,15 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   text: {
-    fontFamily: 'Poppins-Regular',
     color: 'black',
     fontSize: 23,
     fontWeight: 'bold',
   },
   editText: {
-    fontFamily: 'Poppins-Regular',
     color: '#F5B800',
     textDecorationLine: 'underline',
   },
   titleBottom: {
-    fontFamily: 'Poppins-Regular',
     color: 'grey',
     marginTop: wp('2'),
   },
@@ -142,7 +157,6 @@ const styles = StyleSheet.create({
     padding: wp(2.5),
     width: wp('25'),
     height: wp('33'),
-    // borderWidth: 1,
     borderWidth: wp('.3'),
     borderRadius: 15,
     justifyContent: 'center',
@@ -150,24 +164,9 @@ const styles = StyleSheet.create({
     borderColor: 'lightblue',
   },
 
-  // boxShadow: {
-  //   shadowColor: 'lightblue', //works for both ios $ android
-  //   shadowOffset: {
-  //     width: 6,
-  //     height: 6,
-  //   },
-  //   shadowOpacity: 0.8,
-  //   shadowRadius: 4,
-  // },
-  // androidShadow: {
-  //   elevation: 0.2,
-  // },
-
   icon: {
-    // borderWidth: 1.5,
     borderWidth: wp('.4'),
     borderRadius: 30,
-    // padding: 5.5,
     padding: wp('1.5'),
   },
   cardImg: {
@@ -175,8 +174,6 @@ const styles = StyleSheet.create({
     height: wp('11'),
   },
   cardText: {
-    fontFamily: 'Poppins-Regular',
-    color: 'black',
     alignItems: 'center',
     fontSize: 15,
     textAlign: 'center',

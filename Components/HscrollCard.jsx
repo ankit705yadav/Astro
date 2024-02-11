@@ -127,7 +127,6 @@ const styles = StyleSheet.create({
   cardTitle: {
     color: 'black',
     fontWeight: 'bold',
-    fontFamily: 'Poppins-Regular',
   },
 });
 

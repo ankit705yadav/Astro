@@ -8,7 +8,7 @@ import {
 
 export default function Panchang() {
   return (
-    <ScrollView style={{backgroundColor: 'white'}}>
+    <ScrollView style={styles.wrapper}>
       <View style={styles.headContainer}>
         <Octicons name="arrow-left" size={20} color={'black'} />
         <View style={{flexDirection: 'row'}}>
@@ -22,6 +22,7 @@ export default function Panchang() {
           />
         </View>
       </View>
+
       <View style={styles.hero}>
         <Image
           style={styles.iconPng}
@@ -29,6 +30,7 @@ export default function Panchang() {
         />
         <Text style={styles.title}>Panchang</Text>
       </View>
+
       <View style={styles.cardContainer}>
         <View
           style={[
@@ -43,8 +45,7 @@ export default function Panchang() {
           <Text style={styles.cardtext}>Kartika-Amanta{'\n'}</Text>
           <Text style={styles.cardtext}>Maargashira-Purimata</Text>
         </View>
-      </View>
-      <View style={styles.cardContainer}>
+
         <View
           style={[
             styles.card,
@@ -58,8 +59,7 @@ export default function Panchang() {
           <Text style={styles.cardtext}>Kartika-Amanta{'\n'}</Text>
           <Text style={styles.cardtext}>Maargashira-Purimata</Text>
         </View>
-      </View>
-      <View style={styles.cardContainer}>
+
         <View
           style={[
             styles.card,
@@ -73,21 +73,100 @@ export default function Panchang() {
           <Text style={styles.cardtext}>Hindu Lunar Day{'\n'}</Text>
         </View>
       </View>
+      <View
+        style={[styles.timingsContainer, styles.shadow, styles.shadowAndroid]}>
+        <View style={styles.timingsHead}>
+          <View style={styles.timingsHeadLeft}>
+            <Image source={require('../assets/carbon_time-filled.png')} />
+            <Text style={{color: 'black', fontSize: 17.5, fontWeight: 'bold'}}>
+              Timings
+            </Text>
+          </View>
+          <View style={styles.timingsHeadRight}>
+            <Image source={require('../assets/info-outline.png')} />
+          </View>
+        </View>
+
+        <View style={[styles.timings]}>
+          <View
+            style={[
+              styles.timecard,
+              styles.shadow,
+              styles.shadowAndroid,
+              {backgroundColor: '#F3F9EC'},
+            ]}>
+            <Text style={styles.tcardTitle}>Brahama Muhurta</Text>
+            <Text style={styles.time}>04:47 AM</Text>
+            <Text style={styles.to}>To</Text>
+            <Text style={styles.time}>05:36 Am</Text>
+          </View>
+          <View
+            style={[
+              styles.timecard,
+              styles.shadow,
+              styles.shadowAndroid,
+              {backgroundColor: '#FFF9E5'},
+            ]}>
+            <Text style={styles.tcardTitle}>Rahu Kaal </Text>
+            <Text style={styles.time}>04:47 AM</Text>
+            <Text style={styles.to}>To</Text>
+            <Text style={styles.time}>05:36 Am</Text>
+          </View>
+          <View
+            style={[
+              styles.timecard,
+              styles.shadow,
+              styles.shadowAndroid,
+              {backgroundColor: '#F8EAFA'},
+            ]}>
+            <Text style={styles.tcardTitle}>Guli Kaal</Text>
+            <Text style={styles.time}>04:47 AM</Text>
+            <Text style={styles.to}>To</Text>
+            <Text style={styles.time}>05:36 Am</Text>
+          </View>
+          <View
+            style={[
+              styles.timecard,
+              styles.shadow,
+              styles.shadowAndroid,
+              {backgroundColor: '#E6F7FF'},
+            ]}>
+            <Text style={styles.tcardTitle}>Abhijit</Text>
+            <Text style={styles.time}>04:47 AM</Text>
+            <Text style={styles.to}>To</Text>
+            <Text style={styles.time}>05:36 Am</Text>
+          </View>
+          <View
+            style={[
+              styles.timecard,
+              styles.shadow,
+              styles.shadowAndroid,
+              {backgroundColor: '#FFECE5'},
+            ]}>
+            <Text style={styles.tcardTitle}>Brahama Muhurta</Text>
+            <Text style={styles.time}>04:47 AM</Text>
+            <Text style={styles.to}>To</Text>
+            <Text style={styles.time}>05:36 Am</Text>
+          </View>
+        </View>
+      </View>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  wrapper: {
+    backgroundColor: 'white',
+    padding: wp('4'),
+  },
   headContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: wp('2.2'),
   },
   headText: {
     fontSize: 17,
     color: 'black',
-    fontFamily: 'Poppins-Regular',
     textAlign: 'center',
     textAlignVertical: 'center',
   },
@@ -111,7 +190,8 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   cardContainer: {
-    padding: wp('4'),
+    padding: wp('2'),
+    gap: wp('4'),
   },
   card: {
     borderRadius: 12,
@@ -143,5 +223,56 @@ const styles = StyleSheet.create({
   shadowAndroid: {
     // borderWidth: 1, // Add a border to mimic shadow on Android
     borderColor: 'rgba(0,0,0,0.25)', // Set border color to match shadow color
+  },
+
+  timingsContainer: {
+    // borderWidth: 1,
+    padding: wp('2'),
+    gap: wp('2'),
+    // borderWidth: 1,
+  },
+  timingsHead: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  timingsHeadLeft: {
+    flexDirection: 'row',
+    gap: wp('2'),
+  },
+  timingsHeadRight: {},
+  timings: {
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    gap: wp('2'),
+    marginTop: wp('3.5'),
+  },
+  timecard: {
+    alignItems: 'center',
+    borderRadius: 10,
+    padding: wp('3'),
+    width: wp('42'),
+    height: wp('34'),
+  },
+  // lastCard: {
+  //   position: 'absolute',
+  //   left: '50%',
+  //   transform: [{translateX: -50}],
+  // },
+  tcardTitle: {
+    color: 'black',
+    fontWeight: 'bold',
+    fontSize: 16,
+    marginBottom: wp('3'),
+  },
+  time: {
+    fontSize: 15,
+    color: 'black',
+    fontWeight: '600',
+  },
+  to: {
+    fontSize: 15.5,
+    color: 'black',
+    padding: wp('.8'),
   },
 });

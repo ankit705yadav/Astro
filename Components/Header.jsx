@@ -9,6 +9,39 @@ import {
 const Header = () => {
   const [name, setName] = useState('Kumar');
 
+  function getCurrentDateFormatted() {
+    const daysOfWeek = [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+    ];
+    const months = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+    ];
+
+    const currentDate = new Date();
+    const month = months[currentDate.getMonth()];
+    const date = currentDate.getDate();
+    const day = daysOfWeek[currentDate.getDay()];
+
+    return `${month} ${date}, ${day}`;
+  }
+
   return (
     <View style={styles.layout}>
       <View style={styles.headTop}>
@@ -20,10 +53,8 @@ const Header = () => {
             />
           </View>
           <View>
-            <Text style={styles.text}>
-              Hey,{name}!<Text>{'  '}</Text>{' '}
-            </Text>
-            <Text style={styles.text2}>Aug 12 ,Monday</Text>
+            <Text style={styles.text}>Hey,{name}!</Text>
+            <Text style={styles.text2}>{getCurrentDateFormatted()}</Text>
           </View>
         </View>
         <View style={styles.headRight}>
@@ -54,19 +85,16 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'flex-start',
     gap: hp('2.5'),
-    // padding: wp('3'),
   },
   text: {
-    fontFamily: 'Poppins-Regular',
     fontSize: 18,
     color: 'black',
-    fontWeight: 'bold',
+    fontFamily: 'SpaceGrotesk-SemiBold',
 
     textAlignVertical: 'center',
     textAlign: 'center',
   },
   text2: {
-    fontFamily: 'Poppins-Regular',
     color: 'grey',
     textAlignVertical: 'center',
     textAlign: 'center',
@@ -81,11 +109,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   icon: {
-    // borderWidth: wp('.5'),
     borderWidth: 1.7,
     borderRadius: 50,
     padding: wp('1'),
-    // padding: 4,
     marginRight: wp('2.2'),
   },
   headRight: {
@@ -97,22 +123,17 @@ const styles = StyleSheet.create({
 
   menuIcon: {
     borderRadius: 50,
-    // borderWidth: wp('.5'),
     borderWidth: 1.7,
     padding: wp('3'),
-    // padding: 10,
     marginLeft: wp('3'),
-    // marginLeft: 12,
   },
 
   headDown: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     borderWidth: wp('0.3'),
-    // borderWidth: 1.3,
     borderColor: 'black',
     padding: wp('1.3'),
-    // padding: 5,
     borderRadius: 30,
   },
   button: {
@@ -127,7 +148,6 @@ const styles = StyleSheet.create({
   },
   btnText: {
     color: 'white',
-    fontFamily: 'Poppins-Regular',
   },
 });
 

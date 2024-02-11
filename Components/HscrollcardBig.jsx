@@ -140,7 +140,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'black',
     fontWeight: 'bold',
-    fontFamily: 'Poppins-Regular',
   },
   cardInfo: {
     color: 'grey',
@@ -152,7 +151,6 @@ const styles = StyleSheet.create({
   },
   cardLink: {
     color: 'blue',
-    fontFamily: 'Poppins-Regular',
     fontSize: 15,
     textAlign: 'center',
   },

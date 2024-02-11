@@ -54,7 +54,6 @@ const styles = StyleSheet.create({
     elevation: 20,
   },
   text: {
-    fontFamily: 'Poppins-Regular',
     textAlign: 'center',
     textAlignVertical: 'center',
     color: 'grey',

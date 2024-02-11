@@ -104,7 +104,6 @@ const styles = StyleSheet.create({
   headText: {
     fontSize: 17,
     color: 'black',
-    fontFamily: 'Poppins-Regular',
     textAlign: 'center',
     textAlignVertical: 'center',
   },
@@ -145,7 +144,6 @@ const styles = StyleSheet.create({
   cardTime: {
     color: 'black',
     fontWeight: 'bold',
-    fontFamily: 'Poppins-Regular',
   },
   cardTitle: {
     color: 'black',
@@ -173,7 +171,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'black',
     fontWeight: 'bold',
-    fontFamily: 'Poppins-Regular',
   },
   cardInfo: {
     color: 'grey',

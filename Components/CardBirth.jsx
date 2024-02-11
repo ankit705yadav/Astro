@@ -160,15 +160,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'black',
     fontWeight: 'bold',
-    fontFamily: 'Poppins-Regular',
   },
   cardInfo: {
     color: 'grey',
     textAlign: 'center',
     fontSize: 15,
     lineHeight: 20,
-    // fontFamily: 'SpaceGrotesk-Regular',
-    // fontFamily: 'Poppins-Regular',
   },
 });
 
